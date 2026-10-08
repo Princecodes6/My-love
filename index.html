@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Paige ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #08030a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, #5b123f55, transparent 30%),
+        radial-gradient(circle at 80% 80%, #8b1e4f44, transparent 30%),
+        #08030a;
+    z-index: -2;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .2; }
+    to { opacity: 1; }
+}
+
+/* FLOATING HEARTS */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ff5c9d;
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+    opacity: .7;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .8;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* INTRO */
+.intro {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.intro-content {
+    max-width: 850px;
+    animation: fadeIn 2s ease;
+}
+
+.small {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ff8db8;
+    font-size: 13px;
+}
+
+h1 {
+    font-size: clamp(55px, 12vw, 130px);
+    margin: 20px 0;
+    background: linear-gradient(90deg, #fff, #ff8db8, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 4s infinite;
+}
+
+@keyframes shine {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
+}
+
+.intro p {
+    font-size: 20px;
+    color: #d9c8d1;
+    line-height: 1.8;
+}
+
+.scroll {
+    margin-top: 50px;
+    color: #ff8db8;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(10px); }
+}
+
+/* STORY */
+.story {
+    max-width: 900px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.chapter {
+    margin-bottom: 130px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease;
+}
+
+.chapter.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chapter-number {
+    color: #ff5c9d;
+    letter-spacing: 4px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: clamp(35px, 6vw, 65px);
+    margin: 15px 0 30px;
+}
+
+.chapter p {
+    color: #d8ccd2;
+    font-size: 19px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+/* QUOTE */
+.quote {
+    margin: 70px 0;
+    padding: 40px;
+    border-left: 3px solid #ff5c9d;
+    background: #ffffff08;
+    font-size: 25px;
+    line-height: 1.6;
+    font-style: italic;
+    color: #fff;
+}
+
+/* FINAL */
+.final {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 25px;
+}
+
+.final-box {
+    max-width: 800px;
+}
+
+.final h2 {
+    font-size: clamp(45px, 8vw, 90px);
+}
+
+.final p {
+    font-size: 20px;
+    line-height: 2;
+    color: #ddd0d7;
+}
+
+.signature {
+    margin-top: 50px;
+    font-size: 28px;
+    color: #ff8db8;
+}
+
+button {
+    margin-top: 40px;
+    padding: 15px 30px;
+    border: 1px solid #ff5c9d;
+    border-radius: 30px;
+    background: transparent;
+    color: #ff8db8;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #ff5c9d;
+    color: white;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="stars" id="stars"></div>
+
+<!-- INTRO -->
+<section class="intro">
+    <div class="intro-content">
+        <div class="small">A story written from the heart</div>
+
+        <h1>Paige ❤️</h1>
+
+        <p>
+            This isn't just a website.<br>
+            It's a little piece of my heart.
+        </p>
+
+        <div class="scroll">
+            ↓ scroll down ↓
+        </div>
+    </div>
+</section>
+
+
+<!-- STORY -->
+<main class="story">
+
+    <section class="chapter">
+        <div class="chapter-number">Chapter One</div>
+        <h2>How It All Started</h2>
+
+        <p>
+            I don't think I could ever explain exactly when everything
+            changed. Sometimes there isn't one specific moment when you
+            realize someone has become important to you.
+        </p>
+
+        <p>
+            It just happens slowly.
+        </p>
+
+        <p>
+            You start looking forward to talking to them. You notice
+            yourself smiling at your phone. You start thinking about them
+            when they're not around. And eventually you realize that this
+            person isn't just another person anymore.
+        </p>
+
+        <p>
+            That's what happened with you, Paige.
+        </p>
+    </section>
+
+
+    <section class="chapter">
+        <div class="chapter-number">Chapter Two</div>
+        <h2>Somewhere Along The Way</h2>
+
+        <p>
+            Somewhere along the way, you became one of the people I care
+            about the most.
+        </p>
+
+        <p>
+            I started realizing how much your presence could change my
+            entire mood. A simple conversation with you could turn a bad
+            day into something better.
+        </p>
+
+        <p>
+            And honestly, I don't think you always realize how much the
+            little things mean to me.
+        </p>
+
+        <p>
+            The conversations. The jokes. The random moments. The times
+            we talk about absolutely nothing and somehow those end up being
+            some of my favorite moments.
+        </p>
+    </section>
+
+
+    <div class="quote">
+        "Out of all the places I could be, sometimes my favorite place is
+        simply wherever I am with you."
+    </div>
+
+
+    <section class="chapter">
+        <div class="chapter-number">Chapter Three</div>
+        <h2>Why You</h2>
+
+        <p>
+            I could make a list of a thousand reasons why I love you,
+            but somehow a list still wouldn't feel like enough.
+        </p>
+
+        <p>
+            I love the way you can make me smile without even trying.
+            I love the way talking to you never feels like something I
+            have to force.
+        </p>
+
+        <p>
+            I love the little things about you that you probably don't
+            even think twice about.
+        </p>
+
+        <p>
+            And most importantly, I love that you're you.
+        </p>
+
+        <p>
+            I don't want some perfect version of you.
+            I don't need you to change yourself into somebody else.
+            I just want you exactly as you are.
+        </p>
+    </section>
+
+
+    <section class="chapter">
+        <div class="chapter-number">Chapter Four</div>
+        <h2>The Little Things</h2>
+
+        <p>
+            Sometimes love isn't some giant movie scene.
+        </p>
+
+        <p>
+            Sometimes it's staying up talking when you should probably
+            be sleeping.
+        </p>
+
+        <p>
+            Sometimes it's laughing at something that wouldn't even be
+            funny to anyone else.
+        </p>
+
+        <p>
+            Sometimes it's checking your phone hoping to see their name.
+        </p>
+
+        <p>
+            Sometimes it's remembering something they said days ago
+            because you actually cared enough to remember it.
+        </p>
+
+        <p>
+            And sometimes it's simply sitting there thinking,
+            "How did I get lucky enough to have this person in my life?"
+        </p>
+    </section>
+
+
+    <section class="chapter">
+        <div class="chapter-number">Chapter Five</div>
+        <h2>What You Mean To Me</h2>
+
+        <p>
+            Paige, you mean more to me than I know how to put into words.
+        </p>
+
+        <p>
+            You're not just someone I love.
+            You're someone I genuinely care about.
+        </p>
+
+        <p>
+            I care about your happiness. I care about how you're doing.
+            I care about the things that make you excited and the things
+            that bother you.
+        </p>
+
+        <p>
+            I want to be someone you can laugh with, talk to, trust,
+            and feel comfortable being yourself around.
+        </p>
+
+        <p>
+            I don't want our relationship to only be about the big
+            romantic moments.
+        </p>
+
+        <p>
+            I want the ordinary moments too.
+        </p>
+    </section>
+
+
+    <div class="quote">
+        "If I had to choose between a thousand different memories,
+        I'd still choose the ones that have you in them."
+    </div>
+
+
+    <section class="chapter">
+        <div class="chapter-number">Chapter Six</div>
+        <h2>The Future</h2>
+
+        <p>
+            I don't know exactly what the future is going to look like.
+        </p>
+
+        <p>
+            Nobody really does.
+        </p>
+
+        <p>
+            But I know that when I think about the future, I hope you're
+            somewhere in it.
+        </p>
+
+        <p>
+            I hope we get to make more memories together.
+            More laughs. More random conversations.
+            More nights where neither of us wants to hang up.
+        </p>
+
+        <p>
+            More moments that we'll look back on someday and realize
+            how much they meant.
+        </p>
+    </section>
+
+
+    <section class="chapter">
+        <div class="chapter-number">Chapter Seven</div>
+        <h2>If I Could Tell You One Thing</h2>
+
+        <p>
+            If I could make sure you understood one thing, it would be
+            this:
+        </p>
+
+        <p>
+            You matter to me.
+        </p>
+
+        <p>
+            More than you probably realize.
+        </p>
+
+        <p>
+            I don't love you because you're perfect.
+            I love you because you're you.
+        </p>
+
+        <p>
+            And even when life gets complicated, even when things aren't
+            perfect, I hope you always remember that there is someone who
+            genuinely cares about you and wants to see you happy.
+        </p>
+    </section>
+
+</main>
+
+
+<!-- FINAL -->
+<section class="final">
+    <div class="final-box">
+
+        <div class="small">The end... or maybe the beginning</div>
+
+        <h2>For You, Paige.</h2>
+
+        <p>
+            If you ever wonder how much I love you, come back to this.
+            Read it again.
+        </p>
+
+        <p>
+            Because every word here is only a small part of what I feel.
+        </p>
+
+        <p>
+            I could write another hundred pages and still probably
+            wouldn't find enough words.
+        </p>
+
+        <p>
+            You're one of the most special people in my life,
+            and I'm thankful for every moment I get to spend with you.
+        </p>
+
+        <p>
+            Whatever happens, wherever life takes us,
+            I'll always be grateful that our paths crossed.
+        </p>
+
+        <div class="signature">
+            I love you, Paige. ❤️
+        </div>
+
+        <button onclick="showMessage()">click this ❤️</button>
+
+        <p id="secret" style="display:none; margin-top:30px;">
+            And if you somehow made it all the way down here...
+            just know that I probably love you more than I know how to say.
+            ❤️
+        </p>
+
+    </div>
+</section>
+
+
+<script>
+
+/* STARS */
+const stars = document.getElementById("stars");
+
+for(let i = 0; i < 150; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 3 + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* FLOATING HEARTS */
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = Math.random() > .5 ? "❤️" : "♡";
+
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+    heart.style.fontSize = (12 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 11000);
+}
+
+setInterval(createHeart, 700);
+
+
+/* SCROLL ANIMATION */
+const chapters = document.querySelectorAll(".chapter");
+
+function reveal() {
+    chapters.forEach(chapter => {
+        const position = chapter.getBoundingClientRect().top;
+
+        if(position < window.innerHeight * .85) {
+            chapter.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
+
+
+/* SECRET MESSAGE */
+function showMessage() {
+    const message = document.getElementById("secret");
+
+    message.style.display = "block";
+
+    message.animate([
+        { opacity: 0, transform: "translateY(20px)" },
+        { opacity: 1, transform: "translateY(0)" }
+    ], {
+        duration: 800,
+        fill: "forwards"
+    });
+}
+
+</script>
+
+</body>
+</html>
